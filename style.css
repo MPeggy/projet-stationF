@@ -1,0 +1,272 @@
+/* à faire pour vérifier que le css est bien lié au html donc à retirer dès que confirmer
+body {
+    background-color: grey
+}
+
+/* Reset : réinitialise et efface les styles par défaut du navigateur*/
+
+a { 
+    text-decoration: none;
+    color: inherit
+}
+
+ul, ol {
+    list-style: none; /*permet de personnaliser ou enlever les bullet points*/
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}  
+ 
+html {
+    scroll-behavior: smooth;
+}
+
+/*Style globale typo avec google fonts*/
+* {
+    font-family: "Cabin", sans-serif;
+}
+
+.flux {
+    margin-left: 75px;
+    margin-right: 75px;
+}
+
+@media (max-width: 500px) {
+    .flux {
+        margin-left: 15px;
+        margin-right: 15px;
+    }    
+}
+
+.title-2 {
+    font-size: 40px;
+    margin-bottom: 20px;
+    line-height: 1,25;
+}
+
+.text-paragraphe {
+    line-height: 1,5;
+
+}
+
+.button {
+    text-transform: uppercase;
+    color: white;
+    border-radius: 20px;
+    padding: 10px 20px;
+    /* background-color: green > retirer du générique car des boutons différents en fontions de la section */
+    display: inline-block;
+}
+
+.button-orange {
+    
+    background: linear-gradient(90deg, #ff3395, #ffb800 50% 100%);
+    background-size: 200% 100%;
+    background-position: right;
+    transition: all 1s;
+}
+
+.button-orange:hover {
+    background-position: left;
+}
+.button-black {
+    background-color: black;
+    transition: background-color 0,25s;
+}
+
+.button-black:hover {
+    background-color: grey;
+}
+/*START STYLISATION DU HEADER*/
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 50px;
+    margin-bottom: 50px;
+  
+}
+.list-links {
+    display: flex;
+    column-gap: 40px;
+    align-items: center;
+}
+
+.logo {
+    width: 125px;
+    height: 25px;
+    margin-right: 40px;
+    
+}
+
+.nav-link {
+    text-transform: uppercase;
+    font-size: 14px;
+}
+/*possible de rajouter une class button dans le a du li "postuler pour styliser le bouton postuler ou de sélectionner les enfants cf exemple ci apres 
+.button {
+    background-color: black;
+    color: white;
+    padding: 10px 15px; 
+    border-radius: 20px; /*permet d'arrondir les bords*/
+
+    .nav-link:last-child {
+        background-color: black;
+        color: white;
+        padding: 10px 30px; 
+        border-radius: 30px;
+        font-weight: 500;
+    }
+/* AUTRES SELECTEURS POSSIBLES 
+Pur le premier élément
+    .nav-link:first-child {
+        background-color: RED;
+    }
+Pour l'élément en position 3 
+    .nav-link:nth-child(3) {
+        background-color: yellow;
+    }
+        /*
+        
+/*START stylisation de la cover */  
+
+.cover {
+    display: flex;
+    align-items: center;
+}
+
+@media (max-width: 500px) {
+    .cover {
+        flex-direction: column;
+    }
+}
+
+.image-office {
+    width: 55%;
+    flex-shrink: 0;
+    height: 250px;
+    object-fit: cover; /*comportement de mon image*/
+    object-position: bottom;
+}
+
+.icon-scroll {
+    background-color: black;
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.cover-title {
+    font-size: 50px;
+    margin-bottom: 20px;
+
+}
+
+.cover-introduction {
+    margin-bottom: 30px;
+}
+
+.cover-text {
+    padding-right: 100px;
+}
+
+/*Stylisation des Programs*/
+
+.programs {
+    background-color: #202020;
+    margin-top: 75px;
+    padding-top: 75px;
+    padding-bottom: 75px;
+
+}
+
+.programs .flux {
+    display: flex;
+    gap: 50px
+}
+
+.programs .container-texts {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.programs .title-2 {
+    width: 50%;
+}
+
+.programs .button {
+    margin-top: 50px;
+}
+
+.programs .container-texts p {
+    flex-grow: 1;
+}
+
+.programs .container-images {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+}
+
+.programs .container-images li{
+    background-color: white;
+    border-radius:  10px;
+    width: calc(50% - 25px / 2);
+    height: 130px;
+    padding: 30px;
+    /*box-sizing: border-box; > remonter dans le * afin que cal s'applique à toutes images*/
+}
+
+.programs .container-images li img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/* STARTStylisation du online */
+
+/* Dégradé écriture 
+Propiété : function(angle, couleur1, couleur 2, couleur3 debut% fin%, couleur4...)
+EXEMPLES :
+    background: linear-gradient(90deg, blue, red);
+    background: linear-gradient(to left bottom, blue, red);
+    background: linear-gradient(45deg, blue 0%, green 20%, red 50%);
+    background: linear-gradient(0, yellow 0% 20%, blue 20% 40%, green 40% 60%, red 60% 80%, orange 80% 100%);
+    background: linear-gradient(0, rgba(0, 0, 0), rgba(0, 0, 0, 0) 25% );
+FIN DES EXEMPLES NB > derniere commande qui est prise en compte */
+
+.online {
+    background: linear-gradient(180deg, #202020 0% 50%, white 50% 100%);
+    /* Repris dans le online content et permettre de superposer les sections 
+    display: flex;
+    padding: 75px 50px 50px;
+    background: linear-gradient(90deg,#ff3395,#ffb800) ; */
+}
+
+.online .online-content {
+    display: flex;
+    padding: 75px 50px 50px;
+    background: linear-gradient(90deg,#ff3395,#ffb800) ;
+}
+.online img {
+    width: 50%;
+    padding-right: 50px;
+}
+.online .container-texts {
+    width: 50%;
+    color: white;
+    line-height: 1,5;
+}
+
+.online .container-texts a {
+    margin-top: 50px;
+}
